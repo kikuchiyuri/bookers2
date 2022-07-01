@@ -1,2 +1,40 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- ユーザー情報 -->
+<div>
+  <h2>User info</h2>
+  <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+
+
+<!-- ユーザーの投稿一覧 -->
+<div>
+  <h2>Books</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+
+　　<% @books.each do |book| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to user_path(@user.id) do %>
+            <%= image_tag @user.get_profile_image(80,80) %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to book_path(book.id) do %>
+            <%= book.title %>
+          <% end %>
+        </td>
+        <td><%= book.body %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+</div>
