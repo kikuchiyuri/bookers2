@@ -7,7 +7,7 @@
     <label for ="user_image">Image</label>
     <%= f.file_field :profile_image, accept: "image/*" %>
     <label for ="user_introduction">Introduction</label>
-    <%= f.text_area :body, id: "user_introduction" %>
+    <%= f.text_area :introduction, id: "user_introduction" %>
     <%= f.submit "Update User" %>
   </div>
 <% end %>
