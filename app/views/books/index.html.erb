@@ -13,7 +13,7 @@
   <% @books.each do |book| %>
   <tbody>
     <tr>
-      <td><%= image_tag 'default-image.jpeg' %></td>
+      <td><%= image_tag book.user.get_profile_image(80,80) %></td>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
     </tr>
