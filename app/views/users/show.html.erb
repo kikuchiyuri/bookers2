@@ -1,23 +1,8 @@
 <!-- ユーザー詳細情報 -->
-<div>
-  <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
+<%= render 'userinfo', user: @user %>
 
-  <table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th><%= @user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= @user.introduction %></th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p><%= link_to "User Edit", edit_user_path(@user.id) %></p>
+<!-- 新規投稿フォーム -->
+<%= render 'books/newbook', book: @book %>
 
 
 <!-- ユーザーの投稿一覧 -->
